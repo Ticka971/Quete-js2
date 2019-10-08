@@ -1,24 +1,29 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Contact from './components/Contact'
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Contact
+        name= "Itachi uchiwa "
+        avatar="http://avatarbox.net/avatars/img33/naruto_uchiha_itachi_avatar_picture_47237.jpg"
+        online
+        online />
+      <Contact
+       name= "Naruto uzumaki"
+       avatar="http://avatarbox.net/avatars/img1/naruto_shippuuden_avatar_picture_67423.jpg"
+       online
+       online />
+       <Contact
+       name= "Sakura haruno"
+       avatar="https://avatarmaker.net/avatars_upload/s130042207.png"
+       online
+       online />
+
     </div>
   );
 }
