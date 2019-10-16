@@ -3,20 +3,33 @@ import React from "react"
 import "./Contact.css"
 
 
-function Contact(props) {
+class Contact extends React.Component{
+    constructor(props){
+        super(props)
+        this.state={
+            status: false
+        }
+    }
+    render(){
     return (
         <div className="Contact">
-            <img className="avatar" src={props.avatar} alt={props.avatar} />
+            <img className="avatar" src={this.props.avatar} alt={this.props.avatar} />
 
             <div className="status">
-                <h4 className="name">{props.name}</h4>
-                <div className="status-bloc">
-                    <p className={props.online ? "status-online" : "status-offline"}></p>
-                    <p className="status-text"> {props.online ? "Online" : "Offline"}</p>
+                <h4 className="name">{this.props.name}</h4>
+                <div className="status-bloc" onClick={event => {
+                        const newStatus = !this.state.status
+                        this.setState({
+                            status: newStatus
+                        })
+                    }}>
+                    <p  className={this.state.status ? "status-online" : "status-offline"}></p>
+                    <p className="status-text"> {this.state.status ? "Online" : "Offline"}</p>
                 </div>
             </div>
         </div>
     )
+}
 }
 
 
